@@ -18,10 +18,10 @@ impl Publisher {
     }
 
     pub fn probe(base_url: &str, auth_token: &str) -> () {
-        println!("Probing connection to Netbox...");
+        println!("Probing connection to NetBox...");
 
         match create_client(base_url, auth_token).test_connection() {
-            Ok(()) => println!("Connection established!"),
+            Ok(()) => println!("Connection \x1b[32mestablished\x1b[0m!"),
             Err(err) => println!("{:?}", err),
         }
     }
